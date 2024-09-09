@@ -1,4 +1,4 @@
-import React, { lazy, useState } from 'react'
+import React, {  useState } from 'react'
 import { useSelector } from 'react-redux'
 import { getPasswordResetToken } from '../services/operations/authAPI';
 import { useDispatch } from 'react-redux';

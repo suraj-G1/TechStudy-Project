@@ -51,11 +51,11 @@ const LoginFrom = () => {
             </input>
         </label>
 
-        <label>
+        <label className='relative'>
             <p className="mb-1 text-[0.875rem] leading-[1.375rem] text-richblack-5">Password  <sup className="text-pink-200">*</sup>  </p>
             <input
                 required
-                type='password'
+                type={showPassword?"password":"text"}
                 name='password'
                 value={password}
                 onChange={handleOnChange}

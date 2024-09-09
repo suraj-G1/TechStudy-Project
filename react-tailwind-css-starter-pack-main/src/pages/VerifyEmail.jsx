@@ -26,24 +26,34 @@ const VerifyEmail = () => {
     dispatch(signUp(accountType,firstName,lastName,email,password,confirmPassword,otp,navigate))
   }
   return (
-    <div>
+    <div className="min-h-[calc(100vh-3.5rem)] grid place-items-center">
       {loading ? (
         <div>Loading ....</div>
       ) : (
-        <div>
-          <h1>Verify Email</h1>
-          <p>A verification code sent to your email.Enter the code below</p>
+        <div className="max-w-[500px] p-4 lg:p-8">
+          <h1 className="text-richblack-5 font-semibold text-[1.875rem] leading-[2.375rem]">Verify Email</h1>
+          <p className="text-[1.125rem] leading-[1.625rem] my-4 text-richblack-100">A verification code sent to your email.Enter the code below</p>
 
           <form onSubmit={onSubmitHandler}>
-            <OTPInput
+          <OTPInput
               value={otp}
               onChange={setOtp}
               numInputs={6}
-              renderSeparator={<span>-</span>}
-
-              renderInput={(props) => <input {...props} />}
-            ></OTPInput>
-
+              renderInput={(props) => (
+                <input
+                  {...props}
+                  placeholder="-"
+                  style={{
+                    boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
+                  }}
+                  className="w-[48px] lg:w-[60px] border-0 bg-richblack-800 rounded-[0.5rem] text-richblack-5 aspect-square text-center focus:border-0 focus:outline-2 focus:outline-yellow-50"
+                />
+              )}
+              containerStyle={{
+                justifyContent: "space-between",
+                gap: "0 6px",
+              }}
+            />
             <button type="submit">Verify OTP</button>
           </form>
 

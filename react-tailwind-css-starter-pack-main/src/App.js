@@ -1,19 +1,29 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import Navbar from "./components/common/Navbar";
+// import Navbar from "./components/common/Navbar";
 import Login from "../src/pages/Login";
 import OpenRoute from "./components/core/Auth/OpenRoute";
 import ForgotPassword from "./pages/ForgotPassword";
 import UpdatePassword from "./pages/UpdatePassword";
 import VerifyEmail from "./pages/VerifyEmail";
-
+import About from "./pages/About";
+import Signup from "./pages/Signup";
 function App() {
   return (
     <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter">
-      <Navbar />
+      
       <Routes>
         <Route path="/" element={<Home />}></Route>
+
+        <Route
+          path="signup"
+          element={
+            <OpenRoute>
+              <Signup />
+            </OpenRoute>
+          }
+        />
 
         <Route
           path="login"
@@ -50,6 +60,17 @@ function App() {
             </OpenRoute>
           }
         />
+
+      <Route
+          path="/about"
+          element={
+            <OpenRoute>
+              <About />
+            </OpenRoute>
+          }
+        />
+
+
       </Routes>
     </div>
   );

@@ -15,6 +15,7 @@ import Navbar from '../components/common/Navbar';
 const Home = () => {
   return (
     <div>
+        {/* Navbar */}
         <Navbar/>
         {/*Section 1 */}
         <div className='relative mx-auto max-w-maxContent  flex flex-col w-8/12 items-center text-white justify-between'>

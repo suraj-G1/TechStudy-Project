@@ -28,8 +28,8 @@ const Navbar = () => {
 
 
     const {token} = useSelector((state) => state.auth);
-    const {user} = useSelector((state) => state.profile);
-    const {totalItems} = useSelector((state)=>state.cart);
+    const {user} = useSelector((state) => state.profile || {});
+    const {totalItems} = useSelector((state)=>state.cart|| { totalItems: 0 });
     const location = useLocation();
     const matchRoute = (route)=>{
         return matchPath({path:route},location.pathname);
@@ -65,7 +65,7 @@ const Navbar = () => {
                                             </div>
 
                                             {
-                                                subLinks.length ?
+                                                subLinks ?
                                                 (
                                                     subLinks.map((sublink,index)=>(
                                                         <Link to={`${sublink.link}`}>
@@ -106,7 +106,8 @@ const Navbar = () => {
 
             <div className='flex gap-x-4 items-center'>
                 {
-                    user && user?.accountType === 'Instructor' && (
+                    user && user?.accountType === 'Instructor' && 
+                    (
                         <Link to='/dashboard/cart' className='relative'>
                              <AiOutlineShoppingCart/>
 
