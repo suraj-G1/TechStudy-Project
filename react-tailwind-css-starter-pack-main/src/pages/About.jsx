@@ -5,6 +5,10 @@ import BannerImage2 from '../assets/Images/aboutus2.webp'
 import BannerImage3 from '../assets/Images/aboutus3.webp'
 import Quote from '../components/core/AboutPage/Quote'
 import FoundingStory from '../assets/Images/FoundingStory.png'
+import Stats from '../components/core/AboutPage/Stats'
+import LearningGrid from '../components/core/AboutPage/LearningGrid'
+import ContactFormSection from '../components/core/AboutPage/ContactFormSection'
+import footer from '../components/common/footer'
 const About = () => {
   return (
     <div>
@@ -59,11 +63,44 @@ const About = () => {
                 <div>
                     <div>
                         <h1>Our Vision</h1>
-                        <p></p>
+                        <p>With this vision in our mind , we set out on a journey
+                            to create an e-learning platform that will revolutionize many people
+                            the way they learn
+                        </p>
                     </div>
+
+
+                    <div>
+                        <h1>Our Mission</h1>
+                        <p>With this mission in our mind , we set out on a journey
+                            to create an e-learning platform that will revolutionize many people
+                            the way they learn
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </section>
+
+        {/* Section 4 */}
+
+        <Stats/>
+
+
+        {/* section 5 */}
+
+        <section>
+            <LearningGrid/>
+            <ContactFormSection/>
+        </section>
+
+        <section>
+            <p>Reviews form Learner</p>
+        </section>
+
+        <footer/>
+
+
     </div>
   )
 }
