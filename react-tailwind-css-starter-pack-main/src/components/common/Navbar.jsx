@@ -25,9 +25,9 @@ const subLinks = [
 
 const Navbar = () => {
     console.log("Printing base url: ",process.env.REACT_APP_BASE_URL);
-    const {token} = useSelector( (state) => state.auth );
-    const {user} = useSelector( (state) => state.profile || [] );
-    const {totalItems} = useSelector( (state) => state.cart )
+    const {token} = useSelector( (state) => state.auth || []);
+    const {user} = useSelector( (state) => state.profile || []);
+    const {totalItems} = useSelector( (state) => state.cart ||[] )
     const location = useLocation();
 
     const [ssubLinks, setSsubLinks]  = useState([]);
@@ -45,6 +45,7 @@ const Navbar = () => {
 
 
     useEffect( () => {
+        console.log("Printing Token",token);
         fetchSublinks();
     },[] )
 
@@ -56,7 +57,7 @@ const Navbar = () => {
 
   return (
     <div className='flex h-14 items-center justify-center border-b-[1px] border-b-richblack-700'>
-      <div className='flex w-11/12 max-w-maxContent items-center justify-between'>
+      <div className='flex w-9/12 max-w-maxContent items-center justify-between'>
         {/* Image */}
       <Link to="/">
         <img src={logo} width={160} height={42} loading='lazy'/>
@@ -166,3 +167,4 @@ const Navbar = () => {
 }
 
 export default Navbar
+

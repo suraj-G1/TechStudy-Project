@@ -9,6 +9,11 @@ import UpdatePassword from "./pages/UpdatePassword";
 import VerifyEmail from "./pages/VerifyEmail";
 import About from "./pages/About";
 import Signup from "./pages/Signup";
+import MyProfile from "./components/core/Dashboard/MyProfile";
+import PrivateRoute from "./components/core/Auth/PrivateRoute";
+import Dashboard from "./pages/Dashboard";
+import Sidebar from "./components/core/Dashboard/Sidebar";
+import Error from "./pages/Error";
 function App() {
   return (
     <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter">
@@ -69,6 +74,18 @@ function App() {
             </OpenRoute>
           }
         />
+
+        <Route 
+          element={
+            <PrivateRoute>
+              <Dashboard/>
+            </PrivateRoute>
+          }
+        />
+
+        <Route path="/dashboard/my-profile" element={<MyProfile/>}/>
+
+        <Route path="*" element={<Error/>}/>
 
 
       </Routes>
