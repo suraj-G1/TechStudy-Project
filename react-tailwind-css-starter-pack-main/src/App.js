@@ -12,17 +12,18 @@ import Signup from "./pages/Signup";
 import MyProfile from "./components/core/Dashboard/MyProfile";
 import PrivateRoute from "./components/core/Auth/PrivateRoute";
 import Dashboard from "./pages/Dashboard";
-import Sidebar from "./components/core/Dashboard/Sidebar";
-import Error from "./pages/Error";
 import EnrolledCourses from "./components/core/Dashboard/EnrolledCourses";
 import Cart from "./components/core/Dashboard/Cart";
+import Settings from "./components/core/Dashboard/Settings";
+import { useSelector } from "react-redux";
+import AddCourse from "./components/core/Dashboard/AddCourse";
 function App() {
+  const {user} = useSelector((state)=>state.profile)
   return (
-    <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter">
-      
+    <div className="w-screen min-h-screen bg-richblack-900 flex flex-col font-inter w-9/12">
+      {/* <Navbar/> */}
       <Routes>
         <Route path="/" element={<Home />}></Route>
-
         <Route
           path="signup"
           element={
@@ -85,19 +86,28 @@ function App() {
           }
         />
 
-        <Route path="/dashboard/my-profile" element={<MyProfile/>}/>
+      <Route path="dashboard/my-profile" element={<MyProfile />} />
+      <Route path="dashboard/Settings" element={<Settings />} />
+      
+      {
+        user?.accountType === "Student" && (
+          <>
+          <Route path="dashboard/cart" element={<Cart />} />
+          <Route path="dashboard/enrolled-courses" element={<EnrolledCourses />} />
+          </>
+        )
+      }
 
-        <Route path="*" element={<Error/>}/>
+{
+        user?.accountType === 'Instructor' && (
+          <>
+              <Route path='dashboard/add-course' element={<AddCourse/>}/>
 
+              
+          </>
+        )
+      }
 
-        <Route path="dashboard/enrolled-courses" element={
-          <PrivateRoute>
-            <EnrolledCourses/>
-          </PrivateRoute>
-        }
-          />
-
-        <Route path="dashboard/card" element={<Cart/>}/>
 
 
       </Routes>
