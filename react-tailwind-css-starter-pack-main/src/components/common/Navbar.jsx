@@ -10,7 +10,7 @@ import { apiConnector } from '../../services/apiconnector'
 import { categories } from '../../services/apis'
 import { useState } from 'react'
 import {IoIosArrowDropdownCircle} from "react-icons/io"
-
+import { ACCOUNT_TYPE } from '../../utils/constants'
 const subLinks = [
     {
         title: "python",
@@ -123,7 +123,7 @@ const Navbar = () => {
         <div className='flex gap-x-4 items-center'>
 
             {
-                user && user?.accountType !== "Instructor" && (
+                user && user?.accountType !== ACCOUNT_TYPE.INSTRUCTOR  && (
                     <Link to="/dashboard/cart" className='relative'>
                         <AiOutlineShoppingCart />
                         {

@@ -1,56 +1,31 @@
-import React from 'react'
-import ContactFormSection from '../components/core/AboutPage/ContactFormSection'
-import Footer from '../components/common/footer'
+import React from "react"
+
+import Footer from "../components/common/footer"
+import ContactDetails from "../components/contactPage/ContactDetails"
+import ContactForm from "../components/contactPage/ContactForm"
 
 const contactUs = () => {
   return (
     <div>
-        <div className='flex '>
-            <div className='flex flex-col'>
-                <div className='flex flex-col'>
-                    <div className='flex'>
-                        {/* img */}
-                        <h2>Char with Us</h2>
-                    </div>
-                    <p>Can friendly learn and helping each other is the new way to learn</p>
-                </div>
-
-
-                <div className='flex flex-col'>
-                    <div className='flex'>
-                        {/* img */}
-                        <h2>Call Us</h2>
-                    </div>
-                    <p>Can friendly learn and helping each other is the new way to learn</p>
-                </div>
-
-
-                <div className='flex flex-col'>
-                    <div className='flex'>
-                        {/* img */}
-                        <h2>Visit Us</h2>
-                    </div>
-                    <p>Can friendly learn and helping each other is the new way to learn</p>
-                </div>
-
-                
-            </div>
-
-            <div className='flex flex-col'>
-                <div className='flex flex-col'>
-                    <h2>Got an idea? We got the skills.Let's team Up</h2>
-                    <p>Tell us about yourself and what you got in your mind</p>
-
-                </div>
-                <ContactFormSection/>
-            </div>
+      <div className="mx-auto mt-20 flex w-9/12 max-w-maxContent flex-col justify-between gap-10 text-white lg:flex-row">
+        {/* Contact Details */}
+        <div className="lg:w-[40%]">
+          <ContactDetails />
         </div>
 
-        <div>
-            Review by Learner
+        {/* Contact Form */}
+        <div className="lg:w-[60%]">
+          <ContactForm />
         </div>
-
-        <Footer/>
+      </div>
+      <div className="relative mx-auto my-20 flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 bg-richblack-900 text-white">
+        {/* Reviws from Other Learner */}
+        <h1 className="text-center text-4xl font-semibold mt-8">
+          Reviews from other learners
+        </h1>
+        {/* <ReviewSlider /> */}
+      </div>
+      <Footer />
     </div>
   )
 }
