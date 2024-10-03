@@ -19,6 +19,10 @@ import { useSelector } from "react-redux";
 import AddCourse from "./components/core/Dashboard/AddCourse";
 import { ACCOUNT_TYPE } from "./utils/constants";
 import Contact from './pages/contactUs'
+import MyCourses from "./components/core/Dashboard/MyCourses";
+import EditCourse from '../src/components/core/Dashboard/EditCourse/index'
+import Catalog from "./pages/Catalog";
+import CourseDetails from "./pages/CourseDetails";
 function App() {
   const {user} = useSelector((state)=>state.profile)
   return (
@@ -26,6 +30,9 @@ function App() {
       {/* <Navbar/> */}
       <Routes>
         <Route path="/" element={<Home />}></Route>
+
+        <Route path="catalog/:catalogName" element={<Catalog/>}></Route>
+        <Route path="courses/:courseId" element={<CourseDetails/>}></Route>
         <Route
           path="signup"
           element={
@@ -106,6 +113,8 @@ function App() {
         user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
           <>
               <Route path='dashboard/add-course' element={<AddCourse/>}/>
+              <Route path="/dashboard/my-courses" element={<MyCourses/>}/>
+              <Route path="/dashboard/edit-course" element={<EditCourse/>}/>
 
               
           </>

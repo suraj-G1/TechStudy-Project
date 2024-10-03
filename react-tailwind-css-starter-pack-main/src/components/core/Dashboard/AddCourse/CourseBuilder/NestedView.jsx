@@ -95,10 +95,13 @@ const NestedView = ({handleChangeEditSectionName}) => {
                                         className='flex items-center justify-between gap-x-3 boder-b-2'
                                         >
                                             <div className='flex items-center gap-x-3'>
-                                            <RxDropdownMenu/>
-                                            <p>{data.title}</p>
+                                                <RxDropdownMenu/>
+                                                <p>{data.title}</p>
+                                            </div>
 
-                                            <div className='flex items-center gap-x-3'>
+                                            <div 
+                                            onClick={(e)=>e.stopPropagation()}
+                                            className='flex items-center gap-x-3'>
                                                 <button onClick={()=>setEditSubSection({...data,sectionId:section._id})}>
                                                     <MdModeEditOutline/> 
                                                 </button>
@@ -118,7 +121,7 @@ const NestedView = ({handleChangeEditSectionName}) => {
 
                                                 </button>
                                             </div>
-                            </div>
+                            
 
                                     </div>
                                 })
