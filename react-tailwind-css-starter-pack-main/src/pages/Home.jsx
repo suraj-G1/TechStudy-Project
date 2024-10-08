@@ -11,7 +11,7 @@ import InstructorSection from '../components/core/Homepage/InstructorSection';
 import ExploreMore from '../components/core/Homepage/ExploreMore';
 import Footer from '../components/common/footer';
 import Navbar from '../components/common/Navbar';
-
+import ReviewSlider from '../components/common/ReviewSlider';
 const Home = () => {
   return (
     <div>
@@ -200,6 +200,8 @@ const Home = () => {
         <div className='w-8/12 mx-auto max-w-maxContent  flex flex-col justify-between gap-8 bg-richblack-900 items-center'>
             <InstructorSection/>
             <h2>Reviews form other learner</h2>
+
+            <ReviewSlider/>
         </div>
 
 
