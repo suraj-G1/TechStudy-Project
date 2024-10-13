@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import IconBtn from '../../../common/IconBtn';
-import { buyCourse } from '../../../../services/operations/studentFeatureAPI';
+import { BuyCourse } from '../../../../services/operations/studentFeatureAPI';
 import { useNavigate } from 'react-router-dom';
 
 const RenderTotalAmount = () => {
@@ -13,7 +13,7 @@ const RenderTotalAmount = () => {
     const handleBuyCourse = ()=>{
         const courses = cart.map((course)=>course._id);
         console.log("Bought These Courses",courses);
-        buyCourse(token,courses,user,navigate,dispatch)
+        BuyCourse(token,courses,user,navigate,dispatch)
     }
   return (
     <div>
