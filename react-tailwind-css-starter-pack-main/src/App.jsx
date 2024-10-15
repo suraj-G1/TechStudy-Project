@@ -18,9 +18,9 @@ import Settings from "./components/core/Dashboard/Settings";
 import { useDispatch, useSelector } from "react-redux";
 import AddCourse from "./components/core/Dashboard/AddCourse";
 import { ACCOUNT_TYPE } from "./utils/constants";
-import Contact from './pages/contactUs'
+import Contact from "./pages/contactUs";
 import MyCourses from "./components/core/Dashboard/MyCourses";
-import EditCourse from './components/core/Dashboard/EditCourse/index'
+import EditCourse from "./components/core/Dashboard/EditCourse/index";
 import Catalog from "./pages/Catalog";
 import CourseDetails from "./pages/CourseDetails";
 import ViewCourse from "./pages/ViewCourse";
@@ -32,9 +32,9 @@ import Navbar from "./components/common/Navbar";
 import Error from "./pages/Error";
 function App() {
   //  const {user} = useSelector((state)=>state.profile)
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const { user } = useSelector((state) => state.profile)
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { user } = useSelector((state) => state.profile);
 
   // useEffect(() => {
   //   if (localStorage.getItem("token")) {
@@ -151,7 +151,7 @@ function App() {
         <Route path="*" element={<Error />} />
       </Routes>
     </div>
-  )
+  );
 }
 
 export default App;

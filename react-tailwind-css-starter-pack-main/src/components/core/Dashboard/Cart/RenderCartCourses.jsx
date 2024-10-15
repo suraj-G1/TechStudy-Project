@@ -8,6 +8,7 @@ import { removeFromCart } from "../../../../slices/cartSlice"
 export default function RenderCartCourses() {
   const { cart } = useSelector((state) => state.cart)
   const dispatch = useDispatch()
+  console.log("Printing Cart",cart);
   return (
     <div className="flex flex-1 flex-col">
       {cart.map((course, indx) => (
@@ -50,7 +51,7 @@ export default function RenderCartCourses() {
           <div className="flex flex-col items-end space-y-2">
             <button
               onClick={() => dispatch(removeFromCart(course._id))}
-              className="flex items-center gap-x-1 rounded-md border border-richblack-600 bg-richblack-700 py-3 px-[12px] text-pink-200"
+              className="flex items-center gap-x-1 rounded-md border border-richblack-600 bg-richblack-700 py-2 px-[10px] text-pink-200"
             >
               <RiDeleteBin6Line />
               <span>Remove</span>

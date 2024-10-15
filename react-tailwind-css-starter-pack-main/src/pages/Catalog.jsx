@@ -57,10 +57,10 @@ function Catalog() {
   }
 
   return (
-    <>
+    <div className="w-9/12 mx-auto mt-6">
       {/* Hero Section */}
       <div className=" box-content bg-richblack-800 px-4">
-        <div className="mx-auto flex min-h-[260px] max-w-maxContentTab flex-col justify-center gap-4 lg:max-w-maxContent ">
+        <div className="mx-auto flex min-h-[200px] max-w-maxContentTab flex-col justify-center gap-4 lg:max-w-maxContent ">
           <p className="text-sm text-richblack-300">
             {`Home / Catalog / `}
             <span className="text-yellow-25">
@@ -134,7 +134,7 @@ function Catalog() {
       </div>
 
       <Footer />
-    </>
+    </div>
   )
 }
 
