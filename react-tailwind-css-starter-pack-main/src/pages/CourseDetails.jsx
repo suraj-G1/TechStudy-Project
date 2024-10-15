@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react"
 import { BiInfoCircle } from "react-icons/bi"
 import { HiOutlineGlobeAlt } from "react-icons/hi"
-// import { ReactMarkdown } from "react-markdown/lib/react-markdown"
+//import { Markdown } from "react-markdown"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate, useParams } from "react-router-dom"
 import ConfirmationModal from "../components/common/ConfirmationModal"
-import Footer from '../components/common/footer'
+import Footer from "../components/common/footer"
 import RatingStars from "../components/common/RatingStars"
 import CourseAccordionBar from "../components/core/Course/CourseAccordionBar"
 import CourseDetailsCard from "../components/core/Course/CourseDetailsCard"
@@ -61,7 +61,7 @@ function CourseDetails() {
     setIsActive(
       !isActive.includes(id)
         ? isActive.concat([id])
-        : isActive.filter((e) => e !== id)
+        : isActive.filter((e) => e != id)
     )
   }
 

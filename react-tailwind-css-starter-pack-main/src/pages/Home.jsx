@@ -16,11 +16,11 @@ import HighlightText from "../components/core/Homepage/HighlightText"
 import InstructorSection from "../components/core/Homepage/InstructorSection"
 import LearningLanguageSection from "../components/core/Homepage/LearningLanguageSection"
 import TimelineSection from "../components/core/Homepage/TimelineSection"
-import NavBar from '../components/common/Navbar'
+//import NavBar from '../components/common/Navbar'
 function Home() {
   return (
     <div>
-        <NavBar/>
+        {/* <NavBar/> */}
       {/* Section 1 */}
       <div className="relative mx-auto flex w-9/12 max-w-maxContent flex-col items-center justify-between gap-8 text-white">
         {/* Become a Instructor Button */}

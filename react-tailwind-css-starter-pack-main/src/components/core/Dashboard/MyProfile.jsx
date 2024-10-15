@@ -7,7 +7,9 @@ import IconBtn from "../../common/IconBtn"
 
 export default function MyProfile() {
   const { user } = useSelector((state) => state.profile)
-  const navigate = useNavigate()
+  console.log("User from Profile",user);
+  const navigate = useNavigate();
+  // console.log("Printing user in My Profile",user);
 
   return (
     <>
@@ -30,9 +32,9 @@ export default function MyProfile() {
         </div>
         <IconBtn
           text="Edit"
-          onclick={() => {
+          onclick={() => 
             navigate("/dashboard/settings")
-          }}
+          }
         >
           <RiEditBoxLine />
         </IconBtn>
@@ -42,9 +44,9 @@ export default function MyProfile() {
           <p className="text-lg font-semibold text-richblack-5">About</p>
           <IconBtn
             text="Edit"
-            onclick={() => {
+            onclick={() => 
               navigate("/dashboard/settings")
-            }}
+            }
           >
             <RiEditBoxLine />
           </IconBtn>

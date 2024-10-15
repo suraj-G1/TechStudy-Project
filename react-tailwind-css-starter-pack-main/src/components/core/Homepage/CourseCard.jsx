@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
 
+// Importing React Icons
 import { HiUsers } from "react-icons/hi";
 import { ImTree } from "react-icons/im";
-const CourseCard = ({currentCard,cardData,setCurrentCard}) => {
+
+const CourseCard = ({cardData, currentCard, setCurrentCard}) => {
   return (
     <div
-      className={`w-[400px] lg:w-[28%] ${
+      className={`w-[360px] lg:w-[30%] ${
         currentCard === cardData?.heading
           ? "bg-white shadow-[12px_12px_0_0] shadow-yellow-50"
           : "bg-richblack-800"
@@ -42,7 +44,7 @@ const CourseCard = ({currentCard,cardData,setCurrentCard}) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CourseCard
+export default CourseCard;

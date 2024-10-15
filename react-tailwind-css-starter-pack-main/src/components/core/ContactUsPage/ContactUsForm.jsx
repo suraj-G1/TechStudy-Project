@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 
-import CountryCode from "../../data/countrycode.json"
-import { apiConnector } from "../../services/apiconnector"
-import { contactusEndpoint } from "../../services/apis"
+import CountryCode from "../../../data/countrycode.json"
+import { apiConnector } from "../../../services/apiConnector"
+import { contactusEndpoint } from "../../../services/apis"
 
 const ContactUsForm = () => {
   const [loading, setLoading] = useState(false)
@@ -45,10 +45,10 @@ const ContactUsForm = () => {
 
   return (
     <form
-      className="flex flex-col gap-4"
+      className="flex flex-col gap-7"
       onSubmit={handleSubmit(submitContactForm)}
     >
-      <div className="flex flex-col gap-4 lg:flex-row">
+      <div className="flex flex-col gap-5 lg:flex-row">
         <div className="flex flex-col gap-2 lg:w-[48%]">
           <label htmlFor="firstname" className="lable-style">
             First Name
