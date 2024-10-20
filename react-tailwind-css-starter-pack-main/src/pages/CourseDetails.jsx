@@ -35,7 +35,7 @@ function CourseDetails() {
     ;(async () => {
       try {
         const res = await fetchCourseDetails(courseId)
-        // console.log("course details res: ", res)
+        console.log("course details res: ", res)
         setResponse(res)
       } catch (error) {
         console.log("Could not fetch Course Details")
@@ -101,10 +101,13 @@ function CourseDetails() {
   } = response.data?.courseDetails
 
   const handleBuyCourse = () => {
+    console.log("Buying the Course");
     if (token) {
       BuyCourse(token, [courseId], user, navigate, dispatch)
+      console.log("Bought the Course");
       return
     }
+    
     setConfirmationModal({
       text1: "You are not logged in!",
       text2: "Please login to Purchase Course.",
@@ -155,7 +158,7 @@ function CourseDetails() {
               </div>
               <div>
                 <p className="">
-                  Created By {`${instructor.firstName} ${instructor.lastName}`}
+                  Created By {`${instructor?.firstName} ${instructor?.lastName}`}
                 </p>
               </div>
               <div className="flex flex-wrap gap-5 text-lg">
@@ -242,14 +245,14 @@ function CourseDetails() {
               <div className="flex items-center gap-4 py-4">
                 <img
                   src={
-                    instructor.image
+                    instructor?.image
                       ? instructor.image
-                      : `https://api.dicebear.com/5.x/initials/svg?seed=${instructor.firstName} ${instructor.lastName}`
+                      : `https://api.dicebear.com/5.x/initials/svg?seed=${instructor?.firstName} ${instructor?.lastName}`
                   }
                   alt="Author"
                   className="h-14 w-14 rounded-full object-cover"
                 />
-                <p className="text-lg">{`${instructor.firstName} ${instructor.lastName}`}</p>
+                <p className="text-lg">{`${instructor?.firstName} ${instructor?.lastName}`}</p>
               </div>
               <p className="text-richblack-50">
                 {instructor?.additionalDetails?.about}

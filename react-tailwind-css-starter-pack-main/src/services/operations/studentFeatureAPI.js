@@ -14,6 +14,7 @@ const {
 
 // Load the Razorpay SDK from the CDN
 function loadScript(src) {
+    console.log("Loading the Script");
   return new Promise((resolve) => {
     const script = document.createElement("script")
     script.src = src
@@ -23,7 +24,9 @@ function loadScript(src) {
     script.onerror = () => {
       resolve(false)
     }
+    console.log("Loading the child");
     document.body.appendChild(script)
+    console.log("Loaded the child");
   })
 }
 
@@ -38,16 +41,19 @@ export async function BuyCourse(
   const toastId = toast.loading("Loading...")
   try {
     // Loading the script of Razorpay SDK
+    //console.log("Loading Payment Script");
     const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js")
-
+    //console.log("Loaded the script");
     if (!res) {
       toast.error(
         "Razorpay SDK failed to load. Check your Internet Connection."
       )
       return
     }
+    //console.log("Result",res);
 
     // Initiating the Order in Backend
+    //console.log("Courses",courses);
     const orderResponse = await apiConnector(
       "POST",
       COURSE_PAYMENT_API,
@@ -58,6 +64,7 @@ export async function BuyCourse(
         Authorization: `Bearer ${token}`,
       }
     )
+    console.log("orderRespnose",orderResponse);
 
     if (!orderResponse.data.success) {
       throw new Error(orderResponse.data.message)
