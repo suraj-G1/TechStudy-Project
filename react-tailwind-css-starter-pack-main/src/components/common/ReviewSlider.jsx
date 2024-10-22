@@ -27,6 +27,7 @@ function ReviewSlider() {
         "GET",
         ratingsEndpoints.REVIEWS_DETAILS_API
       )
+      console.log("Review Slider ",data);
       if (data?.success) {
         setReviews(data?.data)
       }
@@ -97,7 +98,7 @@ function ReviewSlider() {
               </SwiperSlide>
             )
           })}
-          {/* <SwiperSlide>Slide 1</SwiperSlide> */}
+           
         </Swiper>
       </div>
     </div>
