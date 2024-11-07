@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import  OTPInput  from "react-otp-input";
 import { Link, useNavigate } from "react-router-dom";
 import { sendOtp, signUp } from "../services/operations/authAPI";
+import {RxCountdownTimer} from 'react-icons/rx'
+import {BiArrowBack} from 'react-icons/bi'
 const VerifyEmail = () => {
   const {signupData, loading } = useSelector((state) => state.auth);
   const [otp, setOtp] = useState("");
@@ -54,18 +56,21 @@ const VerifyEmail = () => {
                 gap: "0 6px",
               }}
             />
-            <button type="submit">Verify OTP</button>
+            <button type="submit" className="w-full bg-yellow-50 py-[12px] px-[12px] rounded-[8px] mt-6 font-medium text-richblack-900">Verify OTP</button>
           </form>
 
-          <div>
-            <div>
-              <Link to="/login">
-                <p>Back to Login</p>
-              </Link>
-            </div>
-
-            <button onSubmit={()=>dispatch(sendOtp(signupData.email,navigate))}>
-                Resend OTP
+          <div className="mt-6 flex items-center justify-between">
+            <Link to="/signup">
+              <p className="text-richblack-5 flex items-center gap-x-2">
+                <BiArrowBack /> Back To Signup
+              </p>
+            </Link>
+            <button
+              className="flex items-center text-blue-100 gap-x-2"
+              onClick={() => dispatch(sendOtp(signupData.email))}
+            >
+              <RxCountdownTimer />
+              Resend it
             </button>
           </div>
         </div>

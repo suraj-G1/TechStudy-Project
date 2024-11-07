@@ -5,6 +5,7 @@ import { useSelector } from "react-redux"
 import { Link, matchPath, useLocation } from "react-router-dom"
 
 import logo from "../../assets/Logo/Logo-Full-Light.png"
+import Logo from '../../assets/Logo/techstudy-logo.png'
 import { NavbarLinks } from "../../data/navbar-links"
 //import { apiconnector } from "../../services/apiconnector"
 //import { apiConnector } from "../../services/apiconnector"
@@ -50,7 +51,9 @@ function Navbar() {
       <div className="flex w-9/12 max-w-maxContent items-center justify-between">
         {/* Logo */}
         <Link to="/">
-          <img src={logo} alt="Logo" width={160} height={32} loading="lazy" />
+          <div className="w-full rounded-lg">
+            <img src={Logo} alt="Logo" width={160} height={20} loading="lazy" className="h-[45px] rounded-md" />
+          </div>
         </Link>
         {/* Navigation links */}
         <nav className="hidden md:block">
@@ -122,7 +125,9 @@ function Navbar() {
             <Link to="/dashboard/cart" className="relative">
               <AiOutlineShoppingCart className="text-2xl text-richblack-100" />
               {totalItems > 0 && (
-                <span className="absolute -bottom-2 -right-2 grid h-5 w-5 place-items-center overflow-hidden rounded-full bg-richblack-600 text-center text-xs font-bold text-yellow-100">
+                <span className="absolute -bottom-2 -right-2 grid h-5 w-5 place-items-center
+                 overflow-hidden rounded-full bg-richblack-600 text-center text-xs font-bold
+                  text-yellow-100">
                   {totalItems}
                 </span>
               )}

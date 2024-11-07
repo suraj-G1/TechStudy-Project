@@ -18,7 +18,7 @@ function Course_Card({ course, Height }) {
   // console.log("count............", avgReviewCount)
 
   return (
-    <>
+    <div>
       <Link to={`/courses/${course._id}`}>
         <div className="">
           <div className="rounded-lg">
@@ -53,7 +53,7 @@ function Course_Card({ course, Height }) {
           </div>
         </div>
       </Link>
-    </>
+    </div>
   )
 }
 

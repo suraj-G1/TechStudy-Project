@@ -128,7 +128,6 @@ function App() {
           )}
           <Route path="dashboard/settings" element={<Settings />} />
         </Route>
-
         {/* For the watching course lectures */}
         <Route
           element={
