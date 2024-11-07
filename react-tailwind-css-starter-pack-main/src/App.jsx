@@ -1,7 +1,6 @@
 import "./App.css";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
-// import Navbar from "./components/common/Navbar";
 import Login from "./pages/Login";
 import OpenRoute from "./components/core/Auth/OpenRoute";
 import ForgotPassword from "./pages/ForgotPassword";
@@ -26,8 +25,6 @@ import CourseDetails from "./pages/CourseDetails";
 import ViewCourse from "./pages/ViewCourse";
 import VideoDetails from "./components/core/ViewCourse/VideoDetails";
 import Instructor from "./components/core/Dashboard/InstructorDashboard/InstructorChart";
-import { useEffect } from "react";
-import { getUserDetails } from "./services/operations/profileAPI";
 import Navbar from "./components/common/Navbar";
 import Error from "./pages/Error";
 function App() {

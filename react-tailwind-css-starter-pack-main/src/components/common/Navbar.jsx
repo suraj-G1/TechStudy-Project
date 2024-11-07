@@ -5,7 +5,7 @@ import { useSelector } from "react-redux"
 import { Link, matchPath, useLocation } from "react-router-dom"
 
 import logo from "../../assets/Logo/Logo-Full-Light.png"
-import Logo from '../../assets/Logo/techstudy-logo.png'
+import Logo from '../../assets/Logo/finalLogo.png'
 import { NavbarLinks } from "../../data/navbar-links"
 //import { apiconnector } from "../../services/apiconnector"
 //import { apiConnector } from "../../services/apiconnector"
@@ -45,14 +45,14 @@ function Navbar() {
   return (
     <div
       className={`flex h-14 items-center justify-center border-b-[1px] border-b-richblack-700 ${
-        location.pathname !== "/" ? "bg-richblack-800" : ""
+        location.pathname !== "/" ? "bg-richblack-900" : ""
       } transition-all duration-200`}
     >
       <div className="flex w-9/12 max-w-maxContent items-center justify-between">
         {/* Logo */}
         <Link to="/">
-          <div className="w-full rounded-lg">
-            <img src={Logo} alt="Logo" width={160} height={20} loading="lazy" className="h-[45px] rounded-md" />
+          <div className="w-full p-1">
+            <img src={Logo} alt="Logo" width={160} height={20} loading="lazy" className="h-[43px] bg-transparent rounded-md px-1 " />
           </div>
         </Link>
         {/* Navigation links */}
